@@ -23,10 +23,11 @@ namespace Table_manager
 
             listView1.FullRowSelect = true;
             listView1.GridLines = true;
-            listView1.HeaderStyle = ColumnHeaderStyle.Nonclickable;
+            listView1.View = View.Details;
             listView1.Columns.Add("Id");
             listView1.Columns.Add("ClientName");
             listView1.Columns.Add("Age");
+            listView1.Columns.Add("Birthday");
 
             await LoadStudentsAsync();
         }
@@ -52,9 +53,10 @@ namespace Table_manager
                 {
                     var item = new ListViewItem(new string[]
                     {
-                        Convert.ToString(data[0]),
-                        Convert.ToString(data[1]),
-                        Convert.ToString(data[2])
+                        Convert.ToString(data["Id"]),
+                        Convert.ToString(data["ClientName"]),
+                        Convert.ToString(data["Age"]),
+                        Convert.ToString(data["BirthDay"])
                     });
 
                     listView1.Items.Add(item);
