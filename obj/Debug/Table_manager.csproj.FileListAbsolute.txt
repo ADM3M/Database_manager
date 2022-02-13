@@ -1,0 +1,12 @@
+C:\Users\flysw\source\repos\Table_manager\bin\Debug\Table_manager.exe.config
+C:\Users\flysw\source\repos\Table_manager\bin\Debug\Table_manager.exe
+C:\Users\flysw\source\repos\Table_manager\bin\Debug\Table_manager.pdb
+C:\Users\flysw\source\repos\Table_manager\obj\Debug\Table_manager.csproj.AssemblyReference.cache
+C:\Users\flysw\source\repos\Table_manager\obj\Debug\Table_manager.Properties.Resources.resources
+C:\Users\flysw\source\repos\Table_manager\obj\Debug\Table_manager.csproj.GenerateResource.cache
+C:\Users\flysw\source\repos\Table_manager\obj\Debug\Table_manager.csproj.CoreCompileInputs.cache
+C:\Users\flysw\source\repos\Table_manager\obj\Debug\Table_manager.exe
+C:\Users\flysw\source\repos\Table_manager\obj\Debug\Table_manager.pdb
+C:\Users\flysw\source\repos\Table_manager\bin\Debug\Database1.mdf
+C:\Users\flysw\source\repos\Table_manager\bin\Debug\Database1_log.ldf
+C:\Users\flysw\source\repos\Table_manager\obj\Debug\Table_manager.Database_Table_Managament.resources
