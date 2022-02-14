@@ -1,27 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Table_manager
 {
-    public partial class InsertWindow: Form
+    public partial class InsertWindow : Form
     {
         SqlConnection sqlConnection = null;
-        
+
         public InsertWindow(SqlConnection sqlConnection)
         {
             InitializeComponent();
             this.sqlConnection = sqlConnection;
         }
 
-        private async void button2_Click(object sender, EventArgs e)
+        private async void button2_Click(object sender, EventArgs e) // INSERT
         {
             var InsertStudentCommand = new SqlCommand("INSERT INTO [Clients] (ClientName, Age, Birthday) VALUES(@Name, @Age, @Birthday)", sqlConnection);
             InsertStudentCommand.Parameters.AddWithValue("Name", textBox1.Text);

@@ -29,7 +29,7 @@ namespace Table_manager
             listView1.Columns.Add("Age");
             listView1.Columns.Add("Birthday");
 
-            await LoadStudentsAsync();
+            await LoadClientsAsync();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -40,7 +40,7 @@ namespace Table_manager
             }
         }
 
-        private async Task LoadStudentsAsync() //Select
+        private async Task LoadClientsAsync() // SELECT
         {
             SqlDataReader data = null;
             SqlCommand LoadStudentsCommand = new SqlCommand("SELECT * FROM [Clients]", sqlConnection);
@@ -75,17 +75,66 @@ namespace Table_manager
             }
         }
 
-        private async void toolStripButton5_Click(object sender, EventArgs e)
+        private async Task DeleteClientsAsync(int id) // DELETE
+        {
+            SqlCommand DeleteCommand = new SqlCommand("DELETE FROM [Clients] WHERE [Id] = @Id", sqlConnection);
+            DeleteCommand.Parameters.AddWithValue("Id", id);
+
+            try
+            {
+                await DeleteCommand.ExecuteNonQueryAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void toolStripButton5_Click(object sender, EventArgs e) // Refresh button
         {
             listView1.Items.Clear();
 
-            await LoadStudentsAsync();
+            await LoadClientsAsync();
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void toolStripButton1_Click(object sender, EventArgs e) // Insert button
         {
             InsertWindow insertWindow = new InsertWindow(sqlConnection);
             insertWindow.Show();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e) // Update button
+        {
+            if (listView1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("You should select row you want to update", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            ListViewItem lvItem = listView1.SelectedItems[0];
+
+            UpdateWindow window = new UpdateWindow(sqlConnection, lvItem);
+            window.Show();
+        }
+
+        private async void toolStripButton3_Click(object sender, EventArgs e) // Delete button
+        {
+            if (listView1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("You should select row you want to delete", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            int id = Convert.ToInt32(listView1.SelectedItems[0].SubItems[0].Text);
+            var dialogResult = MessageBox.Show($"Are you sure you want to delete client {id}?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                await DeleteClientsAsync(id);
+
+                listView1.Items.Clear();
+                await LoadClientsAsync();
+            }
         }
     }
 }
