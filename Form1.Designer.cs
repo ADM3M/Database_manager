@@ -65,6 +65,7 @@ namespace Table_manager
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(49, 24);
             this.toolStripButton1.Text = "Insert";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
             // 
@@ -72,7 +73,7 @@ namespace Table_manager
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(62, 28);
+            this.toolStripButton2.Size = new System.Drawing.Size(62, 24);
             this.toolStripButton2.Text = "Update";
             // 
             // toolStripButton3
@@ -81,7 +82,7 @@ namespace Table_manager
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(57, 28);
+            this.toolStripButton3.Size = new System.Drawing.Size(57, 24);
             this.toolStripButton3.Text = "Delete";
             // 
             // toolStripButton4
@@ -90,13 +91,13 @@ namespace Table_manager
             this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(53, 28);
+            this.toolStripButton4.Size = new System.Drawing.Size(53, 24);
             this.toolStripButton4.Text = "Select";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // toolStripButton5
             // 
@@ -104,8 +105,9 @@ namespace Table_manager
             this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(82, 28);
+            this.toolStripButton5.Size = new System.Drawing.Size(82, 24);
             this.toolStripButton5.Text = "Обновить";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // listView1
             // 

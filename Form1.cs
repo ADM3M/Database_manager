@@ -74,5 +74,18 @@ namespace Table_manager
                 }
             }
         }
+
+        private async void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+
+            await LoadStudentsAsync();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            InsertWindow insertWindow = new InsertWindow(sqlConnection);
+            insertWindow.Show();
+        }
     }
 }

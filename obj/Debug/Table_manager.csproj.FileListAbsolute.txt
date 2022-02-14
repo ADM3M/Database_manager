@@ -10,3 +10,4 @@ C:\Users\flysw\source\repos\Table_manager\obj\Debug\Table_manager.pdb
 C:\Users\flysw\source\repos\Table_manager\bin\Debug\Database1.mdf
 C:\Users\flysw\source\repos\Table_manager\bin\Debug\Database1_log.ldf
 C:\Users\flysw\source\repos\Table_manager\obj\Debug\Table_manager.Database_Table_Managament.resources
+C:\Users\flysw\source\repos\Table_manager\obj\Debug\Table_manager.InsertWindow.resources
